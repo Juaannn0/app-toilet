@@ -70,7 +70,4 @@ Las contribuciones son bienvenidas. Haz un fork del proyecto, crea una rama y en
 
 Este proyecto está bajo la licencia MIT.
 
-
-Si quieres, te puedo hacer otra versión con **badges y screenshots** para que en GitHub se vea más profesional.  
-¿Quieres que te prepare esa también?
 ```
