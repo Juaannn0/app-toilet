@@ -1,6 +1,4 @@
-Listo bro, aquí te lo dejo **sin que se renderice**, puro texto markdown para que lo copies tal cual a tu `README.md`:
 
-````
 # 🚽 App Toilet
 
 Aplicación web para encontrar y registrar baños públicos cercanos usando **Laravel**, **MongoDB**, **Docker** y **Leaflet.js**.
@@ -18,7 +16,6 @@ Aplicación web para encontrar y registrar baños públicos cercanos usando **La
    ```bash
    git clone git@github.com:TU_USUARIO/app-toilet.git
    cd app-toilet
-````
 
 2. Crea y levanta los contenedores:
 
@@ -73,7 +70,6 @@ Las contribuciones son bienvenidas. Haz un fork del proyecto, crea una rama y en
 
 Este proyecto está bajo la licencia MIT.
 
-```
 
 Si quieres, te puedo hacer otra versión con **badges y screenshots** para que en GitHub se vea más profesional.  
 ¿Quieres que te prepare esa también?
