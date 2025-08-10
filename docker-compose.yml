@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/app/Dockerfile
+    container_name: toiletmap_app
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - mongo
+    environment:
+      - DB_CONNECTION=mongodb
+      - DB_HOST=mongo
+      - DB_PORT=27017
+      - DB_DATABASE=toiletmap
+      - DB_USERNAME=
+      - DB_PASSWORD=
+    networks:
+      - toiletmap_net
+
+  nginx:
+    image: nginx:alpine
+    container_name: toiletmap_nginx
+    ports:
+      - "8000:80"
+    volumes:
+      - ./src:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+    networks:
+      - toiletmap_net
+
+  mongo:
+    image: mongo:6
+    container_name: toiletmap_mongo
+    restart: unless-stopped
+    environment:
+      - MONGO_INITDB_DATABASE=toiletmap
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - toiletmap_net
+
+volumes:
+  mongo_data:
+
+networks:
+  toiletmap_net:
+    driver: bridge
